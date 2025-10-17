@@ -4,6 +4,10 @@ app = FastAPI()
 
 SECRET = "saundhariya_iyer"
 
+@app.get("/")
+def read_root():
+    return {"message": "Hello, World!"}
+
 @app.post("/api-endpoint")
 async def receive_task(request: Request):
     data = await request.json()
